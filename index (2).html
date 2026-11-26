@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarePlus Hospital | Your Health, Our Priority</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+html{scroll-behavior:smooth}
+body{color:#24313b;background:#fff;line-height:1.6}
+:root{--blue:#087e8b;--dark:#12343b;--mint:#eaf7f6;--orange:#f4a261}
+header{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.08);position:sticky;top:0;z-index:20;padding:14px 7%}
+nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:25px;font-weight:800;color:var(--dark)}.logo span{color:var(--blue)}
+nav ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
+nav a{color:#34434a;text-decoration:none;font-size:14px;font-weight:600}
+nav a:hover{color:var(--blue)}
+.hero{min-height:550px;display:flex;align-items:center;padding:70px 9%;background-image:linear-gradient(90deg,rgba(8,45,53,.86),rgba(8,45,53,.18)),url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1600');color:#fff}
+.hero-content{max-width:600px}.eyebrow{color:#a9e4df;text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:bold;margin-bottom:15px}
+.hero h1{font-size:clamp(38px,5vw,60px);line-height:1.1;margin-bottom:18px}
+.hero p{font-size:18px;line-height:1.7;margin-bottom:27px}
+.btn{display:inline-block;background:var(--orange);color:#182b30;text-decoration:none;padding:13px 23px;border-radius:5px;font-weight:bold;border:0;cursor:pointer}
+.btn:hover{filter:brightness(.95)}
+section{padding:68px 8%}
+.heading{text-align:center;margin-bottom:36px}.heading h2{font-size:34px;color:var(--dark);margin-bottom:8px}.heading p{color:#66757b}
+.intro{text-align:center;max-width:850px;margin:auto}.intro p{color:#5e6b70;font-size:17px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:35px}
+.stat{background:var(--mint);padding:22px;text-align:center;border-radius:8px}.stat strong{display:block;color:var(--blue);font-size:27px}.stat span{font-size:13px;color:#52646a}
+.departments{background:#f6faf9}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:9px;padding:24px;box-shadow:0 4px 18px rgba(20,60,65,.07)}
+.dept-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--mint);font-size:24px;margin-bottom:14px}
+.card h3{color:var(--dark);margin-bottom:7px}.card p{font-size:14px;color:#66757b}
+.doctors{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.doctor{border:1px solid #e6eeee;border-radius:9px;overflow:hidden;text-align:center;background:#fff}
+.doctor img{width:100%;height:260px;object-fit:cover}
+.doctor-info{padding:19px}.doctor-info h3{color:var(--dark)}.doctor-info p{color:#68777c;font-size:14px}.specialty{color:var(--blue)!important;font-weight:bold;margin:5px 0 12px}
+.services{background:var(--mint)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#fff;border-radius:8px;padding:23px}.service h3{margin-bottom:8px;color:var(--dark)}.service p{font-size:14px;color:#66757b}
+.appointment{background:#f6faf9}
+.form-wrap{max-width:760px;margin:auto;background:#fff;padding:30px;border-radius:10px;box-shadow:0 5px 22px rgba(20,60,65,.08)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:14px;font-weight:bold;margin-bottom:6px;color:#35474d}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ccd8da;border-radius:5px;font-size:15px;background:#fff;color:#26383d}
+.full{grid-column:1/-1}
+.form-wrap button{margin-top:18px}
+.form-note{font-size:12px;color:#718087;margin-top:12px}
+.health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.health-card{border:1px solid #e4eded;border-radius:8px;padding:22px}
+.health-card h3{color:var(--dark);margin-bottom:9px}.health-card p{font-size:14px;color:#64747a}
+.emergency{background:#fff3f0;border-top:4px solid #d94b43}
+.emergency-inner{display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}
+.emergency h2{color:#a62f2a;font-size:30px}.emergency p{color:#654b49}
+.emergency-number{font-size:26px;font-weight:800;color:#a62f2a}
+.contact{background:var(--dark);color:#fff}
+.contact .heading h2{color:#fff}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.contact-grid h3{color:#a9e4df;margin-bottom:8px}.contact-grid p{color:#e0ebec}
+footer{background:#0b252b;color:#cbd8da;text-align:center;padding:23px;font-size:14px}
+@media(max-width:950px){.cards{grid-template-columns:repeat(2,1fr)}nav{flex-direction:column}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){header{padding:14px 5%}nav ul{justify-content:center;gap:12px}.hero{min-height:480px;padding:55px 7%}.hero p{font-size:16px}section{padding:52px 6%}.heading h2{font-size:28px}.cards,.doctors,.service-grid,.health-grid,.contact-grid,.form-grid{grid-template-columns:1fr}.doctor img{height:300px}.full{grid-column:auto}.stats{grid-template-columns:repeat(2,1fr)}.form-wrap{padding:20px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">Care<span>Plus</span> Hospital</div>
+<ul>
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#departments">Departments</a></li><li><a href="#doctors">Doctors</a></li><li><a href="#appointment">Appointment</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="eyebrow">Compassionate care • Advanced medicine</div>
+<h1>Your Health Is Our Greatest Priority.</h1>
+<p>Expert doctors, modern facilities and personal care for every stage of life. We're here to help you feel better.</p>
+<a class="btn" href="#appointment">Book an Appointment</a>
+</div>
+</section>
+
+<section id="about">
+<div class="intro">
+<div class="heading"><h2>Welcome to CarePlus Hospital</h2><p>Care you can trust, close to home.</p></div>
+<p>CarePlus Hospital is committed to providing quality, patient-focused healthcare in a safe and welcoming environment. Our multidisciplinary team combines medical expertise, modern technology and compassionate service to support every patient.</p>
+<div class="stats">
+<div class="stat"><strong>25+</strong><span>Experienced Doctors</span></div>
+<div class="stat"><strong>12</strong><span>Medical Departments</span></div>
+<div class="stat"><strong>24/7</strong><span>Emergency Support</span></div>
+<div class="stat"><strong>10k+</strong><span>Patients Cared For</span></div>
+</div>
+</div>
+</section>
+
+<section class="departments" id="departments">
+<div class="heading"><h2>Our Departments</h2><p>Specialist care across a range of medical needs.</p></div>
+<div class="cards">
+<div class="card"><div class="dept-icon">❤️</div><h3>Cardiology</h3><p>Heart health assessment, diagnosis and treatment.</p></div>
+<div class="card"><div class="dept-icon">🧠</div><h3>Neurology</h3><p>Care for conditions affecting the brain and nervous system.</p></div>
+<div class="card"><div class="dept-icon">🦴</div><h3>Orthopedics</h3><p>Bone, joint, muscle and mobility care.</p></div>
+<div class="card"><div class="dept-icon">👶</div><h3>Pediatrics</h3><p>Healthcare and wellness support for children.</p></div>
+<div class="card"><div class="dept-icon">🩺</div><h3>General Medicine</h3><p>Routine checkups and treatment for common illnesses.</p></div>
+<div class="card"><div class="dept-icon">🤰</div><h3>Gynecology</h3><p>Women's health, maternity and reproductive care.</p></div>
+<div class="card"><div class="dept-icon">👁️</div><h3>Ophthalmology</h3><p>Eye examinations and vision care services.</p></div>
+<div class="card"><div class="dept-icon">🦷</div><h3>Dental Care</h3><p>Preventive and restorative dental services.</p></div>
+</div>
+</section>
+
+<section id="doctors">
+<div class="heading"><h2>Meet Our Doctors</h2><p>Friendly professionals dedicated to your wellbeing.</p></div>
+<div class="doctors">
+<article class="doctor"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700" alt="Doctor portrait"><div class="doctor-info"><h3>Dr. Ananya Rao</h3><p class="specialty">Cardiologist</p><p>Special interest in preventive heart care and cardiac wellness.</p></div></article>
+<article class="doctor"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700" alt="Doctor portrait"><div class="doctor-info"><h3>Dr. Meera Sharma</h3><p class="specialty">Pediatrician</p><p>Dedicated to children's health, growth and development.</p></div></article>
+<article class="doctor"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=700" alt="Doctor portrait"><div class="doctor-info"><h3>Dr. Arjun Kumar</h3><p class="specialty">Orthopedic Specialist</p><p>Focused on mobility, joint health and injury recovery.</p></div></article>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="heading"><h2>Medical Services</h2><p>Support and services designed around your care.</p></div>
+<div class="service-grid">
+<div class="service"><h3>24/7 Emergency Care</h3><p>Emergency assessment and urgent medical support at all hours.</p></div>
+<div class="service"><h3>Diagnostic & Laboratory</h3><p>Routine tests and diagnostic services to support clinical decisions.</p></div>
+<div class="service"><h3>Health Checkup Packages</h3><p>Preventive screening options to help you stay informed about your health.</p></div>
+<div class="service"><h3>Pharmacy</h3><p>Convenient access to prescribed medicines and pharmacy support.</p></div>
+<div class="service"><h3>Ambulance Service</h3><p>Emergency transport support when urgent care is needed.</p></div>
+<div class="service"><h3>Teleconsultation</h3><p>Connect with healthcare professionals for eligible remote consultations.</p></div>
+</div>
+</section>
+
+<section class="appointment" id="appointment">
+<div class="heading"><h2>Book an Appointment</h2><p>Send us your preferred appointment details.</p></div>
+<form class="form-wrap" onsubmit="event.preventDefault(); alert('Thank you! This demo form does not send a real booking. Please contact the hospital directly to confirm your appointment.');">
+<div class="form-grid">
+<div><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+<div><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="Enter your phone number" required></div>
+<div><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="Enter your email"></div>
+<div><label for="department">Department</label><select id="department" name="department" required><option value="">Select department</option><option>Cardiology</option><option>Neurology</option><option>Orthopedics</option><option>Pediatrics</option><option>General Medicine</option><option>Gynecology</option><option>Ophthalmology</option><option>Dental Care</option></select></div>
+<div><label for="date">Preferred Date</label><input id="date" name="date" type="date" required></div>
+<div><label for="time">Preferred Time</label><select id="time" name="time"><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+<div class="full"><label for="message">Additional Message</label><textarea id="message" name="message" rows="4" placeholder="Tell us briefly how we can help"></textarea></div>
+</div>
+<button class="btn" type="submit">Request Appointment</button>
+<p class="form-note">Demo only: submitting this form does not create a real appointment. Contact the hospital to confirm availability.</p>
+</form>
+</section>
+
+<section id="health-info">
+<div class="heading"><h2>Health Information</h2><p>Simple habits that can support a healthier lifestyle.</p></div>
+<div class="health-grid">
+<article class="health-card"><h3>Stay Active</h3><p>Choose regular movement that suits your abilities, and build activity into your daily routine.</p></article>
+<article class="health-card"><h3>Eat a Balanced Diet</h3><p>Include a variety of fruits, vegetables, whole grains and nourishing foods.</p></article>
+<article class="health-card"><h3>Schedule Checkups</h3><p>Talk with a qualified healthcare professional about preventive screenings suited to your needs.</p></article>
+</div>
+</section>
+
+<section class="emergency" id="emergency">
+<div class="emergency-inner">
+<div><h2>Medical Emergency?</h2><p>For urgent medical help in India, call the national emergency number.</p></div>
+<div class="emergency-number">112</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="heading"><h2>Contact & Location</h2><p>We're here to help you find the care you need.</p></div>
+<div class="contact-grid">
+<div><h3>Visit Us</h3><p>MG Road, Vijayawada<br>Andhra Pradesh, India</p></div>
+<div><h3>Call Us</h3><p>Hospital: +91 98765 43210<br>Emergency: 112</p></div>
+<div><h3>Email Us</h3><p>care@careplushospital.example<br>Open 24 hours for emergencies</p></div>
+</div>
+</section>
+</main>
+<footer><p>© 2026 CarePlus Hospital. All Rights Reserved. | Your Health, Our Priority.</p><p>Demo website: replace sample hospital details with verified information before publishing.</p></footer>
+</body>
+</html>
